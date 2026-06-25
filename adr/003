@@ -1,0 +1,18 @@
+# ADR 003 : Format d'encodage et gestion du stockage pour le livrable audio du Podcast
+
+**Date :** 6 mai 2026
+**Statut :** Accepté
+
+## Contexte
+Les consignes du projet imposent de fournir le fichier audio final du podcast directement au sein du dépôt Git accessible. Les enregistrements audio bruts ou non compressés (format .wav) génèrent des volumes de données très importants. GitHub appliquant une limite stricte de 100 Mo par fichier et des quotas globaux de stockage, un fichier trop lourd risquerait de bloquer les commandes de synchronisation (git push) du groupe ou de compliquer le clonage du dépôt par les évaluateurs.
+
+## Décision
+Nous avons décidé d'encoder l'interview finale d'Anès Ayad exclusivement au **format MP3, avec un débit constant de 128 kbps en canal monophonique**, et de le stocker directement dans l'arborescence du dépôt.
+
+## Alternatives envisagées
+* **Conservation du format WAV original :** Rejetée, car la taille du fichier aurait dépassé les limites de téléchargement de l'interface GitHub et ralenti le flux de travail de l'équipe.
+* **Utilisation de Git LFS (Large File Storage) :** Écartée pour éviter d'ajouter une dépendance technique et des configurations d'outils tierces pour les correcteurs, ce qui aurait pu nuire à l'accessibilité immédiate du dépôt.
+
+## Conséquences
+* **Positif :** Le fichier audio compressé pèse moins de 30 Mo, s'intégrant parfaitement dans les limites de GitHub tout en garantissant un push rapide. La qualité audio reste amplement suffisante pour une écoute claire de type interview.
+* **Négatif :** Toute compression entraîne une perte définitive des fréquences audio d'origine, rendant impossible une post-production ou un traitement sonore avancé ultérieur sur cette piste.
