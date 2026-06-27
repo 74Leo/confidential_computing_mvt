@@ -126,3 +126,29 @@ Les objections ont été jugées sérieuses.
 - Les sources primaires ont toutes été identifiées par le groupe.
 - Les résultats et niveaux de confiance du tableau des hypothèses ont été établis par le groupe sur la base du podcast.
 - La transcription du podcast a été réalisée via Whisper et vérifiée manuellement.
+
+
+
+
+## 8. Rédaction du show_notes.md
+
+### Prompt utilisé
+
+> "À partir du résumé de mon interview avec Anès Ayad, génère le show_notes.md complet selon le format imposé par mon école : titre, invité, date, durée, 5 takeaways, 3 timestamps, 5 liens dont 2 sources primaires, et impact sur H1/H2/H3 en une phrase chacun commençant par CONFIRMÉE / INVALIDÉE / NUANCÉE. Tout en français, liens en texte brut avec l'URL sur la ligne suivante."
+
+### Extraits utiles retenus
+
+- Les 5 takeaways directement ancrés dans les propos d'Anès Ayad : adoption métier, coût matériel one-shot, complexité x3, déplacement du périmètre de confiance, modèle de menace avant l'enclave.
+- L'impact H1/H2/H3 rédigé en trois phrases avec statut explicite (CONFIRMÉE pour les trois hypothèses).
+
+### Éléments rejetés
+
+- Des liens proposés automatiquement (Azure Confidential Computing, NIST SP 800-193) ont été remplacés après relecture : trop génériques par rapport aux sujets précis abordés dans l'interview.
+- Les URLs au format hyperlien markdown ont été converties en texte brut sur demande, conformément au format imposé par l'école.
+- Une première version des liens contenait des redirections Google (format `google.com/url?sa=E&q=...`). Toutes remplacées par les URLs directes.
+- Les timestamps générés automatiquement n'ont pas été retenus : l'IA ne disposait pas de l'enregistrement et les valeurs proposées étaient des estimations sans fondement. Relevés manuellement sur l'audio.
+
+### Décision : **retenu après corrections manuelles**
+
+Le contenu a été vérifié contre le résumé de l'interview fourni. Les liens et les timestamps ont été contrôlés et corrigés manuellement.
+
